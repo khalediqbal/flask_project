@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Melbourne Housing Price Prediction</title>
+</head>
+<body>
+    <h1>Melbourne Housing Price Prediction</h1>
+    <form method="POST">
+        <label for="rooms">Number of Rooms:</label>
+        <input type="number" name="rooms" required><br>
+
+        <label for="bathrooms">Number of Bathrooms:</label>
+        <input type="number" name="bathrooms" required><br>
+
+        <label for="landsize">Landsize (sqm):</label>
+        <input type="number" name="landsize" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <p>Predicted Price: ${{ prediction|round(2) }}</p>
+    {% endif %}
+</body>
+</html>
